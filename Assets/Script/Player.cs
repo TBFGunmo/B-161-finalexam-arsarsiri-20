@@ -25,15 +25,21 @@ public class Player : MonoBehaviour
 
     }
 
-    public void SetMoveSpeed(float newSpeed) 
+    public void SetMoveSpeed(float speedIncrease) 
     {
-        moveSpeed = moveSpeed * newSpeed;
-        Debug.Log("Speed change to " + newSpeed);
+        moveSpeed = moveSpeed * speedIncrease;
+        Debug.Log("Speed change to " + moveSpeed);
     }
 
     public void SetInvulnerability(bool isEnabled) 
     {
-        Debug.Log("Invulnerable statue " + isEnabled);
+        Debug.Log("Invulnerable statue : " + isEnabled);
+    }
+
+    public void GetHeavyItem(float jumpDecrease)
+    {
+        jumpForce = jumpDecrease;
+        Debug.Log("You get a heavy item | your new jump : " + jumpDecrease);
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
