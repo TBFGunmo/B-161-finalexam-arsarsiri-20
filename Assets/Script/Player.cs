@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
 
     [field:SerializeField] private Rigidbody2D rb;
 
+    private bool isInvulnerable = false;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -28,4 +31,31 @@ public class Player : MonoBehaviour
         }
 
     }
+
+    public void SetMoveSpeed(float newMoveSpeed) 
+    {
+    
+    }
+
+    public void SetInvulnerability(bool set) 
+    {
+    
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+    }
+
+    public void Move()
+    {
+
+    }
+
+    public void Jump()
+    {
+
+    }
+
+
 }
