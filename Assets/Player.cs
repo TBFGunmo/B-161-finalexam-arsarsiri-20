@@ -6,11 +6,11 @@ public class Player : MonoBehaviour
     private float moveSpeed = 5f; // speed movement
     private float jumpForce = 10f; // basic jump
 
-    private Rigidbody rb;
+    [field:SerializeField] private Rigidbody2D rb;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
