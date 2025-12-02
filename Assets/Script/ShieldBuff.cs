@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class ShieldBuff : PowerUpBase
+public class ShieldBuff : PowerUpBase //inhheritance from PowerUpBase
 {
-    public override void ApplyEffect(Player target)
+    public override void ApplyEffect(Player target) //override abstract method
     {
         if (!IsEffectActive) 
         {

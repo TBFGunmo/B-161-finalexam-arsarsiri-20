@@ -3,17 +3,27 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // public Fields
-    [field: SerializeField]  private float moveSpeed = 5f; // speed movement
-    [field: SerializeField]  private float jumpForce = 10f; // basic jump
+    [field: SerializeField] private float moveSpeed { get; set; } // Encapsulation get set
+
+
+    [field: SerializeField]  private float jumpForce { get; set; } // Encapsulation get set
+
 
     private Rigidbody2D rb;
 
-    private bool isInvulnerable = false;
+    [field: SerializeField]  private bool isInvulnerable { get; set; } // Encapsulation get set
 
-  
+
+    public void initPlayer(float newMoveSpeed, float newJumpForce, bool startInvulnerable) 
+    {
+        moveSpeed = newMoveSpeed;
+        jumpForce = newJumpForce;
+        isInvulnerable = startInvulnerable;
+    }
 
     void Start()
     {
+        initPlayer(5f, 10f, false);
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -33,6 +43,7 @@ public class Player : MonoBehaviour
 
     public void SetInvulnerability(bool isEnabled) 
     {
+        isInvulnerable = isEnabled;
         Debug.Log("Invulnerable statue : " + isEnabled);
     }
 
