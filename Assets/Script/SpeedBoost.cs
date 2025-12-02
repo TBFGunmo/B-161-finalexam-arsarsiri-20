@@ -4,18 +4,11 @@ public class SpeedBoost : PowerUpBase
 {
     public override void ApplyEffect(Player target)
     {
-        throw new System.NotImplementedException();
-    }
+        if (!IsEffectActive)
+        {
+            target.SetMoveSpeed(2);
+        }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Destroy(this.gameObject);
     }
 }

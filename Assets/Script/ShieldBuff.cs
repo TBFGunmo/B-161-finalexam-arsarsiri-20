@@ -4,7 +4,13 @@ public class ShieldBuff : PowerUpBase
 {
     public override void ApplyEffect(Player target)
     {
-        throw new System.NotImplementedException();
+        if (!IsEffectActive) 
+        {
+            target.SetInvulnerability(true);
+        }
+
+        Destroy(this.gameObject);
+        
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
